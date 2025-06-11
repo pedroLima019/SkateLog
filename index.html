@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>SkateLog</title>
+  </head>
+  <body>
+    <main>
+      <div class="text-container">
+        <h1>SkateLog</h1>
+        <p>Onde sua evolução no skate fica visivel</p>
+      </div>
+      <section class="registreTrick">
+        <h2>Registre sua manobra</h2>
+        <div class="formTrick">
+          <form id="form">
+            <div class="form-group">
+              <label for="nameTrick">Nome Trick:</label>
+              <input type="text" id="nameTrick" name="nameTrick" />
+            </div>
+
+            <div class="form-group">
+              <label for="localTrick">Local:</label>
+              <input type="text" id="localTrick" name="localTrick" />
+            </div>
+
+            <div class="form-group">
+              <label for="categoria">Categoria:</label>
+              <select id="categoria">
+                <option value="flip">Flip</option>
+                <option value="slide">Slide</option>
+                <option value="grind">Grind</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="dificuldade">Dificuldade:</label>
+              <select id="dificuldade" name="dificuldade">
+                <option value="">Selecione</option>
+                <option value="fácil">Fácil</option>
+                <option value="média">Média</option>
+                <option value="difícil">Difícil</option>
+              </select>
+
+              <label for="status">Status:</label>
+              <select id="status" name="status">
+                <option value="">Selecione</option>
+                <option value="aprendido">Aprendido</option>
+                <option value="Em progresso">Em progresso</option>
+                <option value="Não aprendido">Não aprendido</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <button type="submit">Salvar Trick</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="viewTricks">
+        <h2>Lista de manobras</h2>
+        <div class="filters">
+          <label for="">Filtrar por:</label>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar por nome..."
+          />
+
+          <select id="statusFilter">
+            <option value="todos">Status</option>
+            <option value="aprendida">Aprendida</option>
+            <option value="quero_aprender">Quero aprender</option>
+          </select>
+
+          <select id="difficultyFilter">
+            <option value="todos">Dificuldade</option>
+            <option value="iniciante">Iniciante</option>
+            <option value="intermediario">Intermediário</option>
+            <option value="avancado">Avançado</option>
+          </select>
+
+          <select id="categoryFilter">
+            <option value="todos">Categoria</option>
+            <option value="flip">Flip</option>
+            <option value="slide">Slide</option>
+            <option value="grind">Grind</option>
+          </select>
+        </div>
+        <div id="listTricks"></div>
+      </section>
+    </main>
+  </body>
+</html>
