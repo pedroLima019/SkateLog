@@ -174,16 +174,11 @@ select {
 .cardStatus .dificult {
   display: flex;
   justify-content: center;
-  border: 1px solid #33313b;
   border-radius: 10px;
   width: 100px;
-  padding: 0.2rem;
+  font-weight: bold;
+  padding: 0.3rem;
 }
-.cardStatus .status {
-  display: flex;
-  justify-content: center;
-  border: 1px solid #33313b;
+.cardStatus select {
   border-radius: 10px;
-  width: 100px;
-  padding: 0.2rem;
 }
