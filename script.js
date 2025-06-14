@@ -13,9 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (selectElement.value === "Em processo") {
       selectElement.style.background = "blue";
       selectElement.style.color = "white";
-    } else {
+    } else if (selectElement.value === "Não aprendida") {
       selectElement.style.background = "red";
       selectElement.style.color = "white";
+    } else {
+      selectElement.style.background = "white";
+      selectElement.style.color = "black";
     }
   };
 
@@ -27,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (text === "média") {
       level.style.background = "yellow";
       level.style.color = "black";
-    } else {
+    } else if (text === "díficil") {
       level.style.background = "red";
       level.style.color = "white";
     }
@@ -48,13 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${nameTrick.value.trim()}</h3>
            <p><strong>Local:</strong> ${localTrick.value.trim()} </p>
            <p><strong>Categoria:</strong> ${categoria.value} </p>
-          <div class="cardStatus">
-            <p class="dificult">${dificuldade.value}</p>
-              <select id="status-select">
-                <option value="Aprendido">Aprendido</option>
-                <option value="Em processo">Em processo</option>
-                <option value="Não aprendida">Não aprendida</option>
-              </select>
+          <div class="container-card">
+            <div class="cardStatus">
+              <p class="dificult">${dificuldade.value}</p>
+                <select id="status-select">
+                  <option value="selecione">Selecione o status</option>
+                  <option value="Aprendido">Aprendido</option>
+                  <option value="Em processo">Em processo</option>
+                  <option value="Não aprendida">Não aprendida</option>
+                </select>
+            </div>
+            <div class="card-actions">
+                  <span class="material-icons edit-btn">edit</span>
+                  <span class="material-icons delete-btn">delete</span>
+              </div>
           </div>
         `;
 
@@ -66,6 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const levelSelect = cardTrick.querySelector(".dificult");
       updateLevel(levelSelect);
+
+      const btnDelete = cardTrick.querySelector(".delete-btn");
+      btnDelete.addEventListener("click", () => {
+        if (true) {
+          confirm("Deseja excluir sua trick ?");
+          cardTrick.remove();
+        }
+      });
 
       listTricks.appendChild(cardTrick);
       alert("Trick nova adicionada com sucesso !");

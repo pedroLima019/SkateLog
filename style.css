@@ -88,7 +88,7 @@ form .form-group input {
 }
 
 form .form-group select {
-  width: 150px;
+  width: 180px;
   border: 1px solid #7e7c86;
   margin-right: 15px;
   outline: none;
@@ -149,7 +149,12 @@ select {
 }
 
 .trick-card {
-  border: 1px solid #52505c;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #33313b;
+  color: #fff;
   border-radius: 5px;
   padding: 1rem;
   margin: 10px 0;
@@ -165,20 +170,36 @@ select {
   margin: 5px 0;
 }
 
+.container-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#status-select {
+  width: 150px;
+  text-align: center;
+}
+
 .cardStatus {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
-.cardStatus .dificult {
-  display: flex;
-  justify-content: center;
-  border-radius: 10px;
+.cardStatus p {
   width: 100px;
-  font-weight: bold;
   padding: 0.3rem;
+  border-radius: 5px;
+  text-align: center;
 }
-.cardStatus select {
-  border-radius: 10px;
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-actions span {
+  cursor: pointer;
 }
